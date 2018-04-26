@@ -3,7 +3,7 @@ import {Layout} from 'antd'
 import StyledContent from 'components/StyledContent'
 import Header from 'components/Header'
 import FirstPage from 'components/FirstPage'
-import InvoiceForm from 'components/InvoiceForm'
+import InvoiceForm from 'containers/InvoiceForm'
 
 export default class MainContent extends React.Component {
 	constructor(props) {
@@ -25,7 +25,7 @@ export default class MainContent extends React.Component {
 			<StyledContent key="content">
 				{!this.state.form
 					? <FirstPage showForm={this.showForm}/>
-					: <InvoiceForm invoiceId={this.state.id}/>
+					: <InvoiceForm invoiceId={this.state.id} showForm={this.showForm}/>
 				}
 			</StyledContent>
 		</Layout>
