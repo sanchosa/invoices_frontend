@@ -1,5 +1,4 @@
 import React from 'react'
-// import inject from './inject'
 import ActionsPanel from 'components/ActionsPanel'
 import InvoiceTable from 'containers/InvoiceTable'
 

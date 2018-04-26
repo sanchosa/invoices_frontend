@@ -2,11 +2,9 @@ import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 import {compose} from 'redux'
 import injectSaga from 'utils/injectSaga'
-// import injectReducer from 'utils/injectReducer'
-import makeSelectFirstPage from './selectors'
-// import reducer from './reducer'
-import {someAction} from './actions'
-import saga from './saga'
+// import makeSelectFirstPage from './selectors'
+// import {someAction} from './actions'
+import saga from './state/saga'
 
 const props = createStructuredSelector({
 	firstpage: makeSelectFirstPage()

@@ -6,7 +6,7 @@ import createHistory from 'history/createBrowserHistory'
 import configureStore from 'store'
 import 'assets/index'
 
-import App from 'containers/App'
+import App from 'components/App'
 
 const history = createHistory()
 const store = configureStore(history)

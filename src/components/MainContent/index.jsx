@@ -2,7 +2,7 @@ import React from 'react'
 import {Layout} from 'antd'
 import StyledContent from 'components/StyledContent'
 import Header from 'components/Header'
-import FirstPage from 'containers/FirstPage'
+import FirstPage from 'components/FirstPage'
 import InvoiceForm from 'components/InvoiceForm'
 
 export default class MainContent extends React.Component {
