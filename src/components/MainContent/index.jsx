@@ -21,7 +21,7 @@ export default class MainContent extends React.Component {
 	}
 	render() {
 		return <Layout>
-			<Header key="header" caption={this.state.form}/>,
+			<Header key="header" caption={this.state.form}/>
 			<StyledContent key="content">
 				{!this.state.form
 					? <FirstPage showForm={this.showForm}/>
