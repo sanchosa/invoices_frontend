@@ -1,5 +1,5 @@
 import React from 'react'
-import ActionsPanel from 'components/ActionsPanel'
+import ActionsPanel from 'containers/ActionsPanel'
 import InvoiceTable from 'containers/InvoiceTable'
 
 const FirstPage = props => [

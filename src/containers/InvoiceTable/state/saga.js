@@ -1,4 +1,4 @@
-import {takeLatest, call, put, select} from 'redux-saga/effects'
+import {takeLatest, call, put} from 'redux-saga/effects'
 import request from 'utils/request'
 import {notification} from 'antd'
 import {GET_INVOICES, DELETE_INVOICE} from './constants'

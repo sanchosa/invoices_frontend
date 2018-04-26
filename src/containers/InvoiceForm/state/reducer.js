@@ -1,14 +1,14 @@
-import {fromJS} from 'immutable'
 import {
-	STORE_INVOICES,
+	STORE_INVOICE,
 	SET_LOADING,
-	initialState
+	initialState,
+	InvoiceRecord
 } from './constants'
 
 export default (state = initialState, action) => {
 	switch (action.type) {
-	case STORE_INVOICES:
-		return state.set(`invoices`, fromJS(action.payload))
+	case STORE_INVOICE:
+		return state.set(`invoice`, new InvoiceRecord(action.payload))
 	case SET_LOADING:
 		return state.set(`loading`, action.payload)
 	default:

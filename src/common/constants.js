@@ -1,6 +1,9 @@
 import randomString from 'randomstring'
 
-const testValues = {
+export const testValues = {
 	string: randomString.generate()
 }
-exports.testValues = testValues
+
+export const invoiceUrl = `api/v1/invoice`
+
+export const dateFormat = `DD-MM-YYYY`
