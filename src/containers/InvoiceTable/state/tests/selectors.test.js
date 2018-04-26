@@ -1,8 +1,22 @@
-// import { fromJS } from 'immutable'
-// import { selectFirstPageDomain } from '../selectors'
+import {List, fromJS} from 'immutable'
+import {initialState} from '../constants'
+import {makeSelectInvoices, makeSelectLoading} from '../selectors'
+import invoices from './constants'
 
-describe(`selectFirstPageDomain`, () => {
-	it(`Expect to have unit tests specified`, () => {
-		expect(true).toEqual(false)
+const mockInvoices = List(invoices)
+
+describe(`InvoiceTable selectors`, () => {
+	const store = fromJS({table: initialState})
+		.setIn([`table`, `invoices`], mockInvoices)
+		.setIn([`table`, `loading`], true)
+
+	it(`Should select table invoices`, () => {
+		const expected = mockInvoices.toJS()
+		const selector = makeSelectInvoices()
+		expect(selector(store)).toEqual(expected)
+	})
+	it(`Should select table loading state`, () => {
+		const selector = makeSelectLoading()
+		expect(selector(store)).toEqual(true)
 	})
 })
