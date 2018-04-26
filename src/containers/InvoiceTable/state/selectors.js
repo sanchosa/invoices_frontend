@@ -1,12 +1,11 @@
 import {createSelector} from 'reselect'
 
-const selectFirstPageDomain = (state) => state.get(`firstPage`)
-const makeSelectFirstPage = () => createSelector(
-	selectFirstPageDomain,
-	substate => substate
+const selectTable = state => state.get(`table`)
+export const makeSelectInvoices = () => createSelector(
+	selectTable,
+	table => table.get(`invoices`).toJS()
 )
-
-export default makeSelectFirstPage
-export {
-	selectFirstPageDomain
-}
+export const makeSelectLoading = () => createSelector(
+	selectTable,
+	table => table.get(`loading`)
+)

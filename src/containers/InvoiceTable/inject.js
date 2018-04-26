@@ -1,27 +1,22 @@
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 import {compose} from 'redux'
-import injectSaga from 'utils/injectSaga'
-// import makeSelectFirstPage from './selectors'
-// import {someAction} from './actions'
-import saga from './state/saga'
+import injectSaga from 'utils/inject-saga'
+import {makeSelectInvoices, makeSelectLoading} from './state/selectors'
+import {getInvoices} from './state/actions'
+import invoicesSaga from './state/saga'
 
 const props = createStructuredSelector({
-	firstpage: makeSelectFirstPage()
+	invoices: makeSelectInvoices(),
+	loading: makeSelectLoading()
 })
-const actions = dispatch => {
-	onClick: e => dispatch(someAction(e.target.value))
-}
+const actions = dispatch => ({
+	getInvoices: () => dispatch(getInvoices())
+})
 
 const withConnect = connect(props, actions)
-// const withReducer = injectReducer({
-// 	firstpage: reducer,
-// })
 const withSaga = injectSaga({
-	firstpage: saga
+	invoices: invoicesSaga
 })
 
-export default Component => compose(
-	withSaga,
-	withConnect
-)(Component)
+export default Component => compose(withSaga, withConnect)(Component)

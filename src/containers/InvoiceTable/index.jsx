@@ -3,23 +3,7 @@ import {Table} from 'antd'
 import Panel from 'components/Panel'
 import Label from 'components/Label'
 import ActionButtons from './content/ActionButtons'
-// import inject from './inject'
-
-const mockData = [
-	{
-		id: 1,
-		number: `1`,
-		date: `2018-04-26`,
-		supplyDate: null,
-		comment: `comment`
-	}, {
-		id: 2,
-		number: `2`,
-		date: `2018-04-26`,
-		supplyDate: null,
-		comment: null
-	}
-]
+import inject from './inject'
 
 class InvoiceTable extends React.PureComponent {
 	constructor(props) {
@@ -49,18 +33,21 @@ class InvoiceTable extends React.PureComponent {
 			}
 		]
 	}
+	componentDidMount() {
+		this.props.getInvoices && this.props.getInvoices()
+	}
 	render() {
 		return <Panel>
 			<Label>Invoices</Label>
 			<Table
-				dataSource={mockData}
+				dataSource={this.props.invoices}
 				columns={this.columns}
 				pagination={{position: `bottom`}}
 				rowKey="id"
+				loading={this.props.loading}
 			/>
 		</Panel>
 	}
 }
 
-// export default inject(InvoiceTable)
-export default InvoiceTable
+export default inject(InvoiceTable)
