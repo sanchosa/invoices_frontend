@@ -1,5 +1,7 @@
 import React from 'react'
+import {Layout} from 'antd'
 import StyledContent from 'components/StyledContent'
+import Header from 'components/Header'
 import FirstPage from 'containers/FirstPage'
 import InvoiceForm from 'components/InvoiceForm'
 
@@ -18,11 +20,14 @@ export default class MainContent extends React.Component {
 		this.setState({id, form})
 	}
 	render() {
-		return <StyledContent>
-			{!this.state.form
-				? <FirstPage showForm={this.showForm}/>
-				: <InvoiceForm invoiceId={this.state.id}/>
-			}
-		</StyledContent>
+		return <Layout>
+			<Header key="header" caption={this.state.form}/>,
+			<StyledContent key="content">
+				{!this.state.form
+					? <FirstPage showForm={this.showForm}/>
+					: <InvoiceForm invoiceId={this.state.id}/>
+				}
+			</StyledContent>
+		</Layout>
 	}
 }
