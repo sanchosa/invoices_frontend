@@ -1,5 +1,5 @@
-import {getInvoices, storeInvoices, setLoading} from '../actions'
-import {GET_INVOICES, STORE_INVOICES, SET_LOADING} from '../constants'
+import {getInvoices, storeInvoices, setLoading, deleteInvoice} from '../actions'
+import {GET_INVOICES, STORE_INVOICES, SET_LOADING, DELETE_INVOICE} from '../constants'
 import invoices from './constants'
 
 describe(`InvoiceTable actions`, () => {	
@@ -14,5 +14,9 @@ describe(`InvoiceTable actions`, () => {
 	it(`Should return type ${SET_LOADING} and data payload`, () => {
 		const expected = {type: SET_LOADING, payload: true}
 		expect(setLoading(true)).toEqual(expected)
+	})
+	it(`Should return type ${DELETE_INVOICE} and data payload`, () => {
+		const expected = {type: DELETE_INVOICE, payload: invoices}
+		expect(deleteInvoice(invoices)).toEqual(expected)
 	})
 })

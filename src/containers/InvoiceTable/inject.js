@@ -3,7 +3,7 @@ import {createStructuredSelector} from 'reselect'
 import {compose} from 'redux'
 import injectSaga from 'utils/inject-saga'
 import {makeSelectInvoices, makeSelectLoading} from './state/selectors'
-import {getInvoices} from './state/actions'
+import {getInvoices, deleteInvoice} from './state/actions'
 import invoicesSaga from './state/saga'
 
 const props = createStructuredSelector({
@@ -11,7 +11,8 @@ const props = createStructuredSelector({
 	loading: makeSelectLoading()
 })
 const actions = dispatch => ({
-	getInvoices: () => dispatch(getInvoices())
+	getInvoices: () => dispatch(getInvoices()),
+	deleteInvoice: id => dispatch(deleteInvoice(id))
 })
 
 const withConnect = connect(props, actions)

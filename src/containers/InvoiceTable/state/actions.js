@@ -1,7 +1,8 @@
 import {
 	GET_INVOICES,
 	STORE_INVOICES,
-	SET_LOADING
+	SET_LOADING,
+	DELETE_INVOICE
 } from './constants'
 
 export function getInvoices() {
@@ -21,6 +22,13 @@ export function storeInvoices(payload) {
 export function setLoading(payload) {
 	return {
 		type: SET_LOADING,
+		payload
+	}
+}
+
+export function deleteInvoice(payload) {
+	return {
+		type: DELETE_INVOICE,
 		payload
 	}
 }

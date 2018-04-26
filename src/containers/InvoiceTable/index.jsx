@@ -29,7 +29,11 @@ class InvoiceTable extends React.PureComponent {
 			}, {
 				title: 'Actions',
 				key: 'actions',
-				render: (text, record) => <ActionButtons data={record} edit={this.props.editClick}/>
+				render: (text, record) => <ActionButtons
+					data={record}
+					edit={this.props.editClick}
+					delete={this.props.deleteInvoice}
+				/>
 			}
 		]
 	}
