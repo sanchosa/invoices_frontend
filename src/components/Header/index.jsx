@@ -1,16 +1,14 @@
 import React from 'react'
-// import styled from 'styled-components'
-// import {Layout, Row, Col} from 'antd'
-// import LanguageSelector from 'containers/LanguageSelector'
+import styled from 'styled-components'
+import {Layout} from 'antd'
 
-// const {Header} = Layout
+const {Header} = Layout
 
-// const StyledHeader = styled(Header)`
-// 	box-shadow: 0px 3px 8px #f0f1f2;
-// 	background: #fff;
-// `
+const StyledHeader = styled(Header)`
+	background: #f0f2f5;
+`
 
 export default () =>
-	<div>
+	<StyledHeader>
 		header
-	</div>
+	</StyledHeader>
