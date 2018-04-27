@@ -66,7 +66,7 @@ class InvoiceTable extends React.PureComponent {
 		const storeOrder = this.props.sorter && this.props.sorter.order || undefined
 
 		if (storeField !== field || storeOrder !== order) {
-			this.props.setSorter && this.props.setSorter(sorter)
+			this.props.setSorter && this.props.setSorter(!field || !order ? null : sorter)
 			this.props.getInvoices && this.props.getInvoices()
 		}
 	}
