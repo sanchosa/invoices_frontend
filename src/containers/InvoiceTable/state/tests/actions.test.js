@@ -3,14 +3,16 @@ import {
 	storeInvoices,
 	setLoading,
 	deleteInvoice,
-	setSorter
+	setSorter,
+	setImgNumber
 } from '../actions'
 import {
 	GET_INVOICES,
 	STORE_INVOICES,
 	SET_LOADING,
 	DELETE_INVOICE,
-	SET_SORTER
+	SET_SORTER,
+	SET_IMG_NUMBER
 } from '../constants'
 import invoices from './constants'
 import {testValues} from 'common/constants'
@@ -37,5 +39,9 @@ describe(`InvoiceTable actions`, () => {
 	it(`Should return type ${SET_SORTER} and data payload`, () => {
 		const expected = {type: SET_SORTER, payload: string}
 		expect(setSorter(string)).toEqual(expected)
+	})
+	it(`Should return type ${SET_IMG_NUMBER} and data payload`, () => {
+		const expected = {type: SET_IMG_NUMBER, payload: string}
+		expect(setImgNumber(string)).toEqual(expected)
 	})
 })

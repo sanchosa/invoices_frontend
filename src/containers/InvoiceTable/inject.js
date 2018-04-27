@@ -16,7 +16,7 @@ const actions = dispatch => ({
 	getInvoices: () => dispatch(getInvoices()),
 	deleteInvoice: id => dispatch(deleteInvoice(id)),
 	setSorter: sorter => dispatch(setSorter(sorter)),
-	setImgNumber: () => dispatch(setImgNumber())
+	setImgNumber: number => dispatch(setImgNumber(number))
 })
 
 const withConnect = connect(props, actions)

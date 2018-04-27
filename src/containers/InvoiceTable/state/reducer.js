@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
 	case SET_SORTER:
 		return state.set(`sorter`, fromJS(action.payload))
 	case SET_IMG_NUMBER:
-		return state.set(`imgNumber`, Math.floor(Math.random() * 1000))
+		return state.set(`imgNumber`, action.payload)
 	default:
 		return state
 	}

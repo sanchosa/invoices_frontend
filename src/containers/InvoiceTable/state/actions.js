@@ -42,9 +42,9 @@ export function setSorter(payload) {
 	}
 }
 
-export function setImgNumber() {
+export function setImgNumber(payload) {
 	return {
 		type: SET_IMG_NUMBER,
-		payload: null
+		payload
 	}
 }

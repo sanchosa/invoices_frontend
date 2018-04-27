@@ -1,7 +1,7 @@
 import {List, fromJS} from 'immutable'
 import {initialState} from '../constants'
 import InvoiceTableReducer from '../reducer'
-import {setLoading, storeInvoices, setSorter} from '../actions'
+import {setLoading, storeInvoices, setSorter, setImgNumber} from '../actions'
 import invoices from './constants'
 import {testValues} from 'common/constants'
 
@@ -24,6 +24,11 @@ describe(`InvoiceTable reducer`, () => {
 	it(`Should set sorter`, () => {
 		const action = setSorter(string)
 		const expectedResult = initialState.set(`sorter`, fromJS(string))
+		expect(InvoiceTableReducer(initialState, action)).toEqual(expectedResult)
+	})
+	it(`Should set imgNumber`, () => {
+		const action = setImgNumber(string)
+		const expectedResult = initialState.set(`imgNumber`, string)
 		expect(InvoiceTableReducer(initialState, action)).toEqual(expectedResult)
 	})
 })

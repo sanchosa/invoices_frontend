@@ -1,6 +1,11 @@
 import {List, fromJS} from 'immutable'
 import {initialState} from '../constants'
-import {makeSelectInvoices, makeSelectLoading, makeSelectSorter} from '../selectors'
+import {
+	makeSelectInvoices,
+	makeSelectLoading,
+	makeSelectSorter,
+	makeSelectImgNumber
+} from '../selectors'
 import invoices from './constants'
 import {testValues} from 'common/constants'
 
@@ -13,6 +18,7 @@ describe(`InvoiceTable selectors`, () => {
 		.setIn([`table`, `invoices`], mockInvoices)
 		.setIn([`table`, `loading`], true)
 		.setIn([`table`, `sorter`], fromJS(sorter))
+		.setIn([`table`, `imgNumber`], string)
 
 	it(`Should select table invoices`, () => {
 		const expected = mockInvoices.toJS()
@@ -26,5 +32,9 @@ describe(`InvoiceTable selectors`, () => {
 	it(`Should select table sorter state`, () => {
 		const selector = makeSelectSorter()
 		expect(selector(store)).toEqual(sorter)
+	})
+	it(`Should select imgNumber state`, () => {
+		const selector = makeSelectImgNumber()
+		expect(selector(store)).toEqual(string)
 	})
 })
