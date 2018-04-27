@@ -4,6 +4,7 @@ import StyledContent from 'components/StyledContent'
 import Header from 'components/Header'
 import FirstPage from 'components/FirstPage'
 import InvoiceForm from 'containers/InvoiceForm'
+import PrintImg from 'containers/PrintImage'
 
 export default class MainContent extends React.Component {
 	constructor(props) {
@@ -20,7 +21,7 @@ export default class MainContent extends React.Component {
 		this.setState({id, form})
 	}
 	render() {
-		return <Layout>
+		return [<Layout key="layout" className="noprint">
 			<Header key="header" caption={this.state.form}/>
 			<StyledContent key="content">
 				{!this.state.form
@@ -28,6 +29,7 @@ export default class MainContent extends React.Component {
 					: <InvoiceForm invoiceId={this.state.id} showForm={this.showForm}/>
 				}
 			</StyledContent>
-		</Layout>
+		</Layout>,
+		<PrintImg key="img"/>]
 	}
 }

@@ -3,7 +3,8 @@ import {
 	STORE_INVOICES,
 	SET_LOADING,
 	DELETE_INVOICE,
-	SET_SORTER
+	SET_SORTER,
+	SET_IMG_NUMBER
 } from './constants'
 
 export function getInvoices(payload) {
@@ -38,5 +39,12 @@ export function setSorter(payload) {
 	return {
 		type: SET_SORTER,
 		payload
+	}
+}
+
+export function setImgNumber() {
+	return {
+		type: SET_IMG_NUMBER,
+		payload: null
 	}
 }

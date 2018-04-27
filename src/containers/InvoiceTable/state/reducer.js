@@ -3,6 +3,7 @@ import {
 	STORE_INVOICES,
 	SET_LOADING,
 	SET_SORTER,
+	SET_IMG_NUMBER,
 	initialState
 } from './constants'
 
@@ -14,6 +15,8 @@ export default (state = initialState, action) => {
 		return state.set(`loading`, action.payload)
 	case SET_SORTER:
 		return state.set(`sorter`, fromJS(action.payload))
+	case SET_IMG_NUMBER:
+		return state.set(`imgNumber`, Math.floor(Math.random() * 1000))
 	default:
 		return state
 	}

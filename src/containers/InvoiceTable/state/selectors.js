@@ -19,3 +19,7 @@ export const makeSelectSorter = () => createSelector(
 		return sorter && sorter.toJS()
 	}
 )
+export const makeSelectImgNumber = () => createSelector(
+	selectTable,
+	table => table.get(`imgNumber`)
+)

@@ -44,6 +44,7 @@ class InvoiceTable extends React.PureComponent {
 					data={record}
 					edit={this.props.editClick}
 					delete={this.props.deleteInvoice}
+					print={this.props.setImgNumber}
 				/>
 			}
 		]

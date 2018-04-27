@@ -6,7 +6,10 @@ const ButtonGroup = Button.Group
 export default props => {
 	const editClick = () => props.edit && props.edit(props.data.id, `edit`)
 	const deleteClick = () => props.delete && props.delete(props.data)
-	const printClick = () => props.print && props.print()
+	const printClick = () => {
+		props.print && props.print()
+		// window.print()
+	}
 
 	return <ButtonGroup>
 		<Button key="edit" icon="edit" onClick={editClick}/>

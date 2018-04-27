@@ -35,4 +35,15 @@ injectGlobal`
 	input {
 		outline: 0;
 	}
+	@media print {
+		.noprint {
+			display: none;
+		}
+	}
+	@media screen {
+		.noview {
+			display: none;
+			white-space: nowrap;
+		}
+	}
 `
