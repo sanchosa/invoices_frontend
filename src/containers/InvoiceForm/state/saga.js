@@ -13,7 +13,7 @@ function *fetchInvoice({payload: id}) {
 
 function *setInvoice({payload}) {
 	const req = payload.id ? request.put : request.post
-	const response = yield call(req, invoiceUrl, payload)
+	yield call(req, invoiceUrl, payload)
 }
 
 export default function *tableSaga() {

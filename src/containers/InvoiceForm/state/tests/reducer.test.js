@@ -1,7 +1,6 @@
 import {initialState, InvoiceRecord} from '../constants'
 import InvoiceFormReducer from '../reducer'
 import {setLoading, storeInvoice} from '../actions'
-import invoices from './constants'
 import mockInvoice from './constants'
 
 const mockInvoiceRecord = new InvoiceRecord(mockInvoice)

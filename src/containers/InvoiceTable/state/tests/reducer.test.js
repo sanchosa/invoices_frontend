@@ -1,8 +1,11 @@
-import {List} from 'immutable'
+import {List, fromJS} from 'immutable'
 import {initialState} from '../constants'
 import InvoiceTableReducer from '../reducer'
-import {setLoading, storeInvoices} from '../actions'
+import {setLoading, storeInvoices, setSorter} from '../actions'
 import invoices from './constants'
+import {testValues} from 'common/constants'
+
+const string = testValues.string
 
 describe(`InvoiceTable reducer`, () => {
 	it(`Should returns the initial state`, () => {
@@ -16,6 +19,11 @@ describe(`InvoiceTable reducer`, () => {
 	it(`Should set invoices`, () => {
 		const action = storeInvoices(invoices)
 		const expectedResult = initialState.set(`invoices`, List(invoices))
+		expect(InvoiceTableReducer(initialState, action)).toEqual(expectedResult)
+	})
+	it(`Should set sorter`, () => {
+		const action = setSorter(string)
+		const expectedResult = initialState.set(`sorter`, fromJS(string))
 		expect(InvoiceTableReducer(initialState, action)).toEqual(expectedResult)
 	})
 })

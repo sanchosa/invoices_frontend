@@ -50,7 +50,7 @@ class InvoiceForm extends React.PureComponent {
 				let {date, supplyDate, ...data} = values
 				date = formatDate(date)
 				supplyDate = formatDate(supplyDate)
-				
+
 				this.props.setInvoice
 					&& this.props.setInvoice({
 						id: this.props.invoiceId,
@@ -79,10 +79,10 @@ class InvoiceForm extends React.PureComponent {
 										message: `Please input invoice number`
 									}]
 								})(
-			            			<Input
-			            				addonAfter={<Icon type="setting"/>}
-			            				placeholder="Input number"
-			            			/>
+									<Input
+										addonAfter={<Icon type="setting"/>}
+										placeholder="Input number"
+									/>
 								)}
 							</FormItem>
 						</Col>
@@ -95,10 +95,7 @@ class InvoiceForm extends React.PureComponent {
 										message: `Please select invoice date`
 									}]
 								})(
-			            			<StyledDatePicker
-			            				// defaultValue={getDateValue(this.props.invoice.date)}
-			            				format={dateFormat}
-			            			/>
+									<StyledDatePicker format={dateFormat}/>
 								)}
 							</FormItem>
 						</Col>
@@ -109,10 +106,7 @@ class InvoiceForm extends React.PureComponent {
 								{getFieldDecorator(`supplyDate`, {
 									initialValue: getDateValue(this.props.invoice.supplyDate)
 								})(
-			            			<StyledDatePicker
-			            				// defaultValue={getDateValue(this.props.invoice.supplyDate)}
-			            				format={dateFormat}
-			            			/>
+									<StyledDatePicker format={dateFormat}/>
 								)}
 							</FormItem>
 						</Col>
@@ -121,9 +115,9 @@ class InvoiceForm extends React.PureComponent {
 						<Col span={24}>
 							<FormItem label="Comment">
 								{getFieldDecorator(`comment`, {
-									initialValue: this.props.invoice.comment,
+									initialValue: this.props.invoice.comment
 								})(
-			            			<TextArea type="textarea" autosize/>
+									<TextArea type="textarea" autosize/>
 								)}
 							</FormItem>
 						</Col>
@@ -140,6 +134,6 @@ class InvoiceForm extends React.PureComponent {
 	}
 }
 
-const WrappedInvoiceForm = Form.create()(InvoiceForm);
+const WrappedInvoiceForm = Form.create()(InvoiceForm)
 
 export default inject(WrappedInvoiceForm)

@@ -47,6 +47,7 @@ const request = method => (url, params) => {
 		credentials: `same-origin`,
 		method
 	}
+
 	if (/get|delete/.test(method) && params) {
 		uri = `/${url}?${toString(params)}`
 	}

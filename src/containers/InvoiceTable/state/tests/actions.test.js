@@ -1,11 +1,26 @@
-import {getInvoices, storeInvoices, setLoading, deleteInvoice} from '../actions'
-import {GET_INVOICES, STORE_INVOICES, SET_LOADING, DELETE_INVOICE} from '../constants'
+import {
+	getInvoices,
+	storeInvoices,
+	setLoading,
+	deleteInvoice,
+	setSorter
+} from '../actions'
+import {
+	GET_INVOICES,
+	STORE_INVOICES,
+	SET_LOADING,
+	DELETE_INVOICE,
+	SET_SORTER
+} from '../constants'
 import invoices from './constants'
+import {testValues} from 'common/constants'
 
-describe(`InvoiceTable actions`, () => {	
-	it(`Should return type ${GET_INVOICES} and null payload`, () => {
-		const expected = {type: GET_INVOICES, payload: null}
-		expect(getInvoices()).toEqual(expected)
+const string = testValues.string
+
+describe(`InvoiceTable actions`, () => {
+	it(`Should return type ${GET_INVOICES} and data payload`, () => {
+		const expected = {type: GET_INVOICES, payload: string}
+		expect(getInvoices(string)).toEqual(expected)
 	})
 	it(`Should return type ${STORE_INVOICES} and data payload`, () => {
 		const expected = {type: STORE_INVOICES, payload: invoices}
@@ -18,5 +33,9 @@ describe(`InvoiceTable actions`, () => {
 	it(`Should return type ${DELETE_INVOICE} and data payload`, () => {
 		const expected = {type: DELETE_INVOICE, payload: invoices}
 		expect(deleteInvoice(invoices)).toEqual(expected)
+	})
+	it(`Should return type ${SET_SORTER} and data payload`, () => {
+		const expected = {type: SET_SORTER, payload: string}
+		expect(setSorter(string)).toEqual(expected)
 	})
 })

@@ -2,13 +2,14 @@ import {
 	GET_INVOICES,
 	STORE_INVOICES,
 	SET_LOADING,
-	DELETE_INVOICE
+	DELETE_INVOICE,
+	SET_SORTER
 } from './constants'
 
-export function getInvoices() {
+export function getInvoices(payload) {
 	return {
 		type: GET_INVOICES,
-		payload: null
+		payload
 	}
 }
 
@@ -29,6 +30,13 @@ export function setLoading(payload) {
 export function deleteInvoice(payload) {
 	return {
 		type: DELETE_INVOICE,
+		payload
+	}
+}
+
+export function setSorter(payload) {
+	return {
+		type: SET_SORTER,
 		payload
 	}
 }

@@ -16,7 +16,7 @@ export default props => {
 		>
 			<Button key="delete" type="danger" icon="delete"/>
 		</Popconfirm>
-	
+
 		<Button key="print" icon="printer" onClick={printClick}/>
 	</ButtonGroup>
 }

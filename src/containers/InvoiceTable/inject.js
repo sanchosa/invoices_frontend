@@ -2,18 +2,20 @@ import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 import {compose} from 'redux'
 import injectSaga from 'utils/inject-saga'
-import {makeSelectInvoices, makeSelectLoading} from './state/selectors'
-import {getInvoices, deleteInvoice} from './state/actions'
+import {makeSelectInvoices, makeSelectLoading, makeSelectSorter} from './state/selectors'
+import {getInvoices, deleteInvoice, setSorter} from './state/actions'
 import invoicesSaga from './state/saga'
 import {DAEMON} from 'utils/constants'
 
 const props = createStructuredSelector({
 	invoices: makeSelectInvoices(),
-	loading: makeSelectLoading()
+	loading: makeSelectLoading(),
+	sorter: makeSelectSorter()
 })
 const actions = dispatch => ({
 	getInvoices: () => dispatch(getInvoices()),
-	deleteInvoice: id => dispatch(deleteInvoice(id))
+	deleteInvoice: id => dispatch(deleteInvoice(id)),
+	setSorter: sorter => dispatch(setSorter(sorter))
 })
 
 const withConnect = connect(props, actions)

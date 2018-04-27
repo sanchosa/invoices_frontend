@@ -12,3 +12,10 @@ export const makeSelectLoading = () => createSelector(
 	selectTable,
 	table => table.get(`loading`)
 )
+export const makeSelectSorter = () => createSelector(
+	selectTable,
+	table => {
+		const sorter = table.get(`sorter`)
+		return sorter && sorter.toJS()
+	}
+)
