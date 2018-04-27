@@ -124,7 +124,7 @@ class InvoiceForm extends React.PureComponent {
 					</Row>
 				</StyledForm>,
 				<Row key="buttons">
-					<Col span={6} offset={18}>
+					<Col span={24}>
 						<StyledButton type="primary" onClick={this.formSubmit}>Save</StyledButton>
 						<StyledButton onClick={this.cancel}>Cancel</StyledButton>
 					</Col>
